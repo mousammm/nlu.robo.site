@@ -1,9 +1,47 @@
-/* Reset margins and paddings globally */
+@import url('https://googleapis.com');
+
+/* Global Reset and Font Application */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* font stuff start */
+/* Typography styling for that modern Dribbble feel */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  letter-spacing: -0.03em; /* Slightly tighter headings look premium */
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+p {
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.6;
+  color: #b5a9ab; /* Soft muted gray-crimson text */
+}
+
+/* Update Navbar tweaks for the new font weights */
+.navbar-logo {
+  font-weight: 800; /* Extra bold for the brand name */
+  letter-spacing: -0.04em;
+}
+
+.navbar-links a {
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.cta-btn {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+/* font stuff end */
 
 html {
   scroll-behavior: smooth; /* Makes clicking nav links animate smoothly */
@@ -33,21 +71,21 @@ section, footer {
 
 /* give each components color */
 .hero-section {
-  background-color: #1a1a1a;
+  background-color: #000000;
   color: #ffffff;
 }
 
 .about-section {
-  background-color: #242424;
+  background-color: #100000;
   color: #ffffff;
 }
 
 .contact-section {
-  background-color: #2f2f2f;
+  background-color: #200000;
   color: #ffffff;
 }
 
 .footer-section {
-  background-color: #111111;
+  background-color: #300000;
   color: #888888;
 }

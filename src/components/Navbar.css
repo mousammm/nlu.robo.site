@@ -1,38 +1,145 @@
-.navbar {
+/* 1. Navbar Wrapper (Centers the floating pill horizontally) */
+.navbar-container {
   position: fixed;
-  top: 0;
+  top: 24px; /* Spacing from the top of the screen */
   left: 0;
-  width: 100vw;
-  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 0 20px;
+}
+
+/* 2. The Premium Floating Pill Design */
+.navbar-pill {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 4rem;
-  background-color: rgba(26, 26, 26, 0.8); /* Semi-transparent */
-  backdrop-filter: blur(10px); /* Modern glassmorphism effect */
-  z-index: 1000; /* Keeps navbar above all sections */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  max-width: 1100px;
+  height: 64px;
+  padding: 0 24px;
+  
+  /* Tinted Glassmorphism Styling (Deep Velvet Black/Red background) */
+  background: rgba(20, 14, 15, 0.8); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  /* Smoothly rounded edges and ultra-thin borders matching the theme */
+  border: 1px solid rgba(255, 76, 96, 0.12);
+  border-radius: 100px;
+  
+  /* Subtle depth shadow */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 }
 
-.nav-logo {
+/* 3. Typography & Logo */
+.navbar-logo {
   color: #ffffff;
-  font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
-.nav-links {
+.navbar-logo span {
+  color: #ff334b; /* Vibrant Cherry Red logo accent */
+}
+
+/* 4. Center Navigation Links */
+.navbar-links {
   display: flex;
+  align-items: center;
+  gap: 32px;
   list-style: none;
-  gap: 2rem;
 }
 
-.nav-links a {
-  color: #cccccc;
+.navbar-links a {
+  color: #b5a9ab; /* Soft muted gray-crimson text */
   text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-links a:hover {
+.navbar-links a:hover {
   color: #ffffff;
+}
+
+/* 5. Right Action Call-To-Action (CTA) Button */
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff334b; /* Vibrant contrast accent red */
+  color: #ffffff; /* Clean white text for readability against red */
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 100px;
+  box-shadow: 0 4px 14px rgba(255, 51, 75, 0.3); /* Premium soft glow */
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: #ff4d62; /* Lightens slightly on hover */
+  box-shadow: 0 6px 20px rgba(255, 51, 75, 0.5); /* Stronger glow on hover */
+  transform: translateY(-1px);
+}
+
+.cta-btn:active {
+  transform: translateY(0px);
+}
+
+/* 1. Reset the wrapper list alignment */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Tighter gap so the hover capsules look unified */
+  list-style: none;
+}
+
+/* 2. Style the individual link containers */
+.navbar-links li {
+  position: relative;
+}
+
+/* 3. Style the Link itself to act as the capsule container */
+.navbar-links a {
+  color: #b5a9ab; /* Soft muted gray-crimson text */
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  
+  /* Critical spacing: creates the inner dimensions of the hover pill */
+  padding: 8px 16px;
+  border-radius: 100px;
+  display: inline-block;
+  
+  /* Initial transparent border/background state */
+  background: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0);
+  
+  /* Ultra-smooth cubic-bezier transition for a high-end feel */
+  transition: 
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+    background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), 
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    backdrop-filter 0.25s ease;
+}
+
+/* 4. The Hover State: Frosted Reddish-Glass Capsule appears */
+.navbar-links a:hover {
+  color: #ffffff; /* Bright text */
+  
+  /* Soft, semi-transparent red-tinted dark background */
+  background: rgba(255, 51, 75, 0.1); 
+  
+  /* Fine sharp border accent */
+  border-color: rgba(255, 51, 75, 0.25);
+  
+  /* Subtle glass blur behind the specific hovered item */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
