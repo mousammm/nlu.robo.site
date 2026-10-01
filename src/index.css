@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth; /* Makes clicking nav links animate smoothly */
+}
+
 /* Ensure the root containers don't restrict height */
 html, body, #root, .app-container {
   width: 100%;
