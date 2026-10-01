@@ -1,0 +1,49 @@
+/* Reset margins and paddings globally */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ensure the root containers don't restrict height */
+html, body, #root, .app-container {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Force each section/footer to be a full-screen block */
+section, footer {
+  width: 100vw;
+  height: 100vh;
+  
+  /* Centering the content inside each section (Optional but recommended) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  /* Padding so content doesn't hit the screen edges */
+  padding: 2rem; 
+}
+
+/* give each components color */
+.hero-section {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.about-section {
+  background-color: #242424;
+  color: #ffffff;
+}
+
+.contact-section {
+  background-color: #2f2f2f;
+  color: #ffffff;
+}
+
+.footer-section {
+  background-color: #111111;
+  color: #888888;
+}
