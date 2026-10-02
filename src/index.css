@@ -69,7 +69,7 @@ html, body, #root, .app-container {
 /* Force each section to be a full-screen block */
 section {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   
   /* Centering the content inside each section (Optional but recommended) */
   display: flex;
