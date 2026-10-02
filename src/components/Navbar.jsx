@@ -6,7 +6,7 @@ export default function Navbar() {
       <div className="navbar-pill">
         {/* Logo / Brand */}
         <div className="navbar-logo">
-          NLU<span>Robotics</span>
+          NLU<span>RC</span>
         </div>
 
         {/* Links */}
@@ -18,7 +18,7 @@ export default function Navbar() {
 
         {/* Right side CTA Button */}
         <div className="navbar-actions">
-          <a href="#contact" className="cta-btn">Get Started</a>
+          <a href="https://github.com/mousammm" className="cta-btn">GitHUB</a>
         </div>
       </div>
     </nav>
