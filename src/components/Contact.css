@@ -230,3 +230,43 @@ form {
   filter: grayscale(30%) invert(0%) contrast(100%) hue-rotate(0deg);
   opacity: 1;
 }
+
+/* ==========================================
+   CONTACT FORM FUNCTIONAL RESPONSES
+   ========================================== */
+
+.form-success-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.form-success-message h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ff334b; /* Crimson feedback accent */
+  letter-spacing: -0.02em;
+}
+
+.form-success-message p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #a39899;
+  margin-bottom: 12px;
+}
+
+.form-error-feedback {
+  font-size: 0.88rem;
+  color: #ff334b;
+  margin-top: -12px;
+  font-weight: 500;
+}
+
+/* Visually softens inputs when form submission requests are actively loading */
+input:disabled, 
+textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
