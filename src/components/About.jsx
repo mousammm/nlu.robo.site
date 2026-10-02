@@ -1,15 +1,12 @@
 import './About.css'
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 export default function About() {
-  const [activeFilter, setActiveFilter] = useState('ALL');
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.1, delayChildren: 0.1 }
+      transition: { staggerChildren: 0.15, delayChildren: 0.1 }
     }
   };
 
@@ -21,125 +18,93 @@ export default function About() {
     }
   };
 
-  const cardVariants = {
-    hidden: { opacity: 0, y: 40, scale: 0.98 },
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
       y: 0,
-      scale: 1,
-      transition: { type: 'spring', stiffness: 45, damping: 15 }
+      transition: { type: 'spring', stiffness: 60, damping: 15, mass: 0.8 }
     }
   };
 
-  const projects = [
-    {
-      id: "01",
-      title: "Autonomous Rover Model-X",
-      category: "ROBOTICS",
-      desc: "A custom 4x4 rugged rover architecture featuring automated route planning and live telemetry.",
-      image: "https://unsplash.com"
-    },
-    {
-      id: "02",
-      title: "Neural Arm Manipulation Node",
-      category: "ML",
-      desc: "Inverse kinematics tracking arm system executing precision manipulation with sub-millimetre accuracy.",
-      image: "https://unsplash.com"
-    },
-    {
-      id: "03",
-      title: "Swarm Compute Hivemind",
-      category: "SOFTWARE",
-      desc: "A responsive system coordinating trajectories for drone clusters via synchronized mesh architectures.",
-      image: "https://unsplash.com"
-    }
+  const stats = [
+    { value: "50+",  label: "Active Members" },
+    { value: "12+",  label: "Projects Deployed" },
+    { value: "3",    label: "National Awards" },
+    { value: "2019", label: "Founded" }
   ];
-
-  // Filtering filter logic rules
-  const filteredProjects = activeFilter === 'ALL' 
-    ? projects 
-    : projects.filter(p => p.category === activeFilter);
 
   return (
     <section id="about" className="about-section">
-      <motion.div 
+      {/* Fluid Moving Gradient Backgrounds */}
+      <div className="about-bg-glows">
+        <div className="glow-sphere glow-1"></div>
+        <div className="glow-sphere glow-2"></div>
+      </div>
+
+      <motion.div
         className="about-container"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={{ once: true, amount: 0.15 }}
       >
-        {/* Core Narrative / Text Rows */}
+        {/* Badge */}
+        <motion.span className="about-badge" variants={itemVariants}>
+          About NLURC
+        </motion.span>
+
+        {/* Masked Heading */}
         <div className="about-header">
-          <div className="mask-wrapper"><motion.h2 className="about-main-title" variants={titleLineVariants}>Pioneering the Next Era of <span>Autonomous Intelligence</span>.</motion.h2></div>
-        </div>
-
-        <div className="about-grid">
-          <motion.div className="about-narrative" variants={cardVariants}>
-            <p className="narrative-lead">At NLURC, we build engines and solve problems that trigger real-world transformations.</p>
-            <p className="narrative-body">We empower visionaries to experiment rapidly, iterate instantly, and deploy scalable architectures with surgical precision.</p>
-          </motion.div>
-          <div className="about-cards-stack">
-            <motion.div className="about-card accent-card" variants={cardVariants}>
-              <h3>01 / CORE MISSION</h3>
-              <p>Engineering computational platforms designed to execute configurations with zero overhead friction.</p>
-            </motion.div>
+          <div className="mask-wrapper">
+            <motion.h2 className="about-main-title" variants={titleLineVariants}>
+              Pioneering the Next Era of <span>Autonomous Intelligence</span>.
+            </motion.h2>
           </div>
         </div>
 
-        {/* SHOWCASE GALLERY WITH ADVANCED NAVIGATION FILTERS */}
-        <div className="gallery-wrapper">
-          <div className="gallery-header-row">
-            <div className="mask-wrapper">
-              <motion.h3 className="gallery-section-title" variants={titleLineVariants}>
-                Selected <span>Showcase</span>
-              </motion.h3>
+        {/* Narrative */}
+        <motion.div className="about-narrative" variants={itemVariants}>
+          <p className="narrative-lead">
+            North Lakhimpur University Robotics Club is a community of engineers, makers,
+            and innovators building the future of autonomous systems from the heart of Assam.
+          </p>
+          <p className="narrative-body">
+            Founded in 2019, NLURC has grown into a premier hub for robotics research and
+            development in Northeast India. We bring together students, hobbyists, and
+            professionals to design, prototype, and deploy cutting-edge solutions across
+            robotics, machine learning, and embedded systems.
+          </p>
+          <p className="narrative-body">
+            From autonomous rovers navigating rugged terrain to neural-controlled robotic
+            arms and coordinated drone swarms, our work spans the full spectrum of modern
+            intelligent systems. We empower visionaries to experiment rapidly, iterate
+            instantly, and deploy scalable architectures with surgical precision.
+          </p>
+        </motion.div>
+
+        {/* Stats */}
+        <motion.div className="about-stats-grid" variants={itemVariants}>
+          {stats.map((stat, i) => (
+            <div key={i} className="stat-card">
+              <span className="stat-value">{stat.value}</span>
+              <span className="stat-label">{stat.label}</span>
             </div>
-            
-            {/* Filter Pills Layout */}
-            <motion.div className="gallery-filters" variants={cardVariants}>
-              {['ALL', 'ROBOTICS', 'ML', 'SOFTWARE'].map((filter) => (
-                <button 
-                  key={filter} 
-                  className={`filter-btn ${activeFilter === filter ? 'active' : ''}`}
-                  onClick={() => setActiveFilter(filter)}
-                >
-                  {filter}
-                </button>
-              ))}
-            </motion.div>
-          </div>
+          ))}
+        </motion.div>
 
-          {/* Animated Grid Container Layout */}
-          <motion.div layout className="projects-gallery-grid">
-            <AnimatePresence mode="popLayout">
-              {filteredProjects.map((project) => (
-                <motion.div 
-                  layout /* Smoothly moves other elements into space when one disappears */
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
-                  transition={{ type: 'spring', stiffness: 50, damping: 15 }}
-                  key={project.id} 
-                  className="project-tile"
-                >
-                  <div className="project-image-frame">
-                    <img src={project.image} alt={project.title} loading="lazy" />
-                    <div className="project-overlay-glow"></div>
-                  </div>
-                  <div className="project-meta">
-                    <span className="project-category">// {project.category}</span>
-                    <div className="project-title-row">
-                      <h4>{project.title}</h4>
-                      <span className="project-num">{project.id}</span>
-                    </div>
-                    <p className="project-desc">{project.desc}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
-        </div>
+        {/* ==========================================
+            CTA BUTTONS — GALLERY & PROJECTS
+            ========================================== */}
+        <motion.div className="about-actions" variants={itemVariants}>
+          <a href="#gallery" className="about-btn-primary">
+            Gallery <span className="btn-arrow">→</span>
+          </a>
+          <a href="#projects" className="about-btn-secondary">
+            Projects <span className="btn-arrow">→</span>
+          </a>
+        </motion.div>
+        {/* ========================================== */}
 
       </motion.div>
     </section>
