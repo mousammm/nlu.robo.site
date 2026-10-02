@@ -7,6 +7,7 @@
   box-sizing: border-box;
   font-family: 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent; /* Disables default blue mobile tap highlight color box */
   -moz-osx-font-smoothing: grayscale;
 }
 
