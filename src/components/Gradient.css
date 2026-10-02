@@ -22,7 +22,7 @@
   position: absolute;
   border-radius: 50%;
   filter: blur(140px);
-  opacity: 0.42;
+  opacity: 0.25;
   mix-blend-mode: screen;
   will-change: transform;
 }
