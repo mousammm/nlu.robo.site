@@ -1,8 +1,185 @@
+/* ==========================================
+   PREMIUM SAAS FLUID HERO SECTION
+   ========================================== */
+
+/* 1. Main Section Container */
 .hero-section {
-  text-transform: uppercase;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0a0607; /* Ultra dark velvet-black canvas */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
 }
 
-.hero-section h1 {
-  font-size: 25rem;
-  overflow: hidden;
+/* 2. Fluid Moving Gradient Backgrounds */
+.hero-bg-glows {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none; /* Allows clicks to pass through to elements beneath */
+}
+
+/* Base style for the fluid glowing spheres */
+.glow-sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px); /* Deep blend blur effect */
+  opacity: 0.45;
+  mix-blend-mode: screen; /* Fuses colors softly against dark canvas */
+}
+
+/* Sphere 1: Rich Cherry Red */
+.glow-1 {
+  top: -10%;
+  left: 20%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(255, 51, 75, 0.6) 0%, rgba(255, 51, 75, 0) 70%);
+  animation: fluidMovementOne 20s infinite alternate ease-in-out;
+}
+
+/* Sphere 2: Deep Crimson Maroon */
+.glow-2 {
+  bottom: -10%;
+  right: 15%;
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, rgba(162, 23, 42, 0.7) 0%, rgba(162, 23, 42, 0) 70%);
+  animation: fluidMovementTwo 25s infinite alternate ease-in-out;
+}
+
+/* Smooth organic movements for background fluid glow */
+@keyframes fluidMovementOne {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(60px, 40px) scale(1.15); }
+  100% { transform: translate(-30px, -20px) scale(0.9); }
+}
+
+@keyframes fluidMovementTwo {
+  0% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-50px, -60px) scale(0.9); }
+  100% { transform: translate(40px, 30px) scale(1.1); }
+}
+
+/* 3. Central Content Structure */
+.hero-container {
+  width: 100%;
+  max-width: 900px;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Modern Minimalist SaaS Badge */
+.hero-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  background: rgba(255, 51, 75, 0.06);
+  border: 1px solid rgba(255, 51, 75, 0.2);
+  border-radius: 100px;
+  color: #ff4c62;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin-bottom: 28px;
+}
+
+/* Aggressive High-Contrast Title */
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.25rem); /* Perfectly scales typography smoothly across device widths */
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.hero-title span {
+  background: linear-gradient(135deg, #ffffff 30%, #ff334b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Makes text clip to gradient */
+}
+
+/* Elegant Soft Subtitle */
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  max-width: 680px;
+  line-height: 1.6;
+  color: #b5a9ab;
+  margin-bottom: 40px;
+}
+
+/* 4. Action Interactive Buttons Layout */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Main Call to Action Button */
+.hero-btn-primary {
+  padding: 14px 28px;
+  background-color: #ff334b;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 100px;
+  box-shadow: 0 4px 20px rgba(255, 51, 75, 0.4);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-btn-primary:hover {
+  background-color: #ff4d62;
+  box-shadow: 0 6px 28px rgba(255, 51, 75, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Secondary Ghost Button */
+.hero-btn-secondary {
+  padding: 14px 28px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 100px;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.hero-btn-primary:active,
+.hero-btn-secondary:active {
+  transform: translateY(0px);
+}
+
+/* Responsive adjustment settings for compact mobile layouts */
+@media (max-width: 480px) {
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
 }
