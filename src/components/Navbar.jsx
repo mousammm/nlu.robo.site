@@ -18,7 +18,7 @@ export default function Navbar() {
 
         {/* Right side CTA Button */}
         <div className="navbar-actions">
-          <a href="https://github.com/mousammm" className="cta-btn">GitHUB</a>
+          <a href="#" className="cta-btn">cta</a>
         </div>
       </div>
     </nav>
