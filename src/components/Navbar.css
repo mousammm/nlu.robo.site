@@ -91,3 +91,31 @@
 .cta-btn:active {
   transform: translateY(0px);
 }
+
+/* ==========================================
+   MOBILE VIEW NAVBAR ADJUSTMENTS
+   ========================================== */
+@media (max-width: 768px) {
+  /* Hide the left logo and right CTA action items */
+  .navbar-logo,
+  .navbar-actions {
+    display: none !important;
+  }
+
+  /* Shrink the capsule to wrap tightly around only the links */
+  .navbar-pill {
+    width: max-content; /* Dynamically shrinks to fit the links */
+    height: 52px;       /* Sleeker height for mobile */
+    padding: 0 8px;     /* Tight internal edge padding */
+  }
+
+  /* Keep the links aligned and adjust spacing */
+  .navbar-links {
+    gap: 4px; 
+  }
+
+  .navbar-links a {
+    padding: 8px 14px; 
+    font-size: 0.88rem; 
+  }
+}
