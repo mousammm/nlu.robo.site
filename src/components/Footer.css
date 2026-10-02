@@ -2,8 +2,6 @@
   position: relative;
   width: 100vw;
   height: auto;
-  min-height: 40vh;
-  /* Pure matching dark background canvas */
   background-color: #0a0607; 
   padding: 100px 40px 40px 40px;
   display: flex;
