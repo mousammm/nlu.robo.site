@@ -2,19 +2,17 @@ import { motion } from 'framer-motion';
 import './Footer.css';
 
 export default function Footer() {
-  // Cascading/staggered viewport structural variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12, // Glides the columns into view sequentially
+        staggerChildren: 0.12,
         delayChildren: 0.1
       }
     }
   };
 
-  // Individual element upward slide animation rules
   const itemVariants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -35,10 +33,9 @@ export default function Footer() {
         className="footer-container"
         variants={containerVariants}
         initial="hidden"
-        whileInView="visible" // Triggers entry immediately upon hit detection
-        viewport={{ once: true, amount: 0.2 }} // Fires once when 20% of the footer enters viewport
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
       >
-        
         {/* Top Block: Brand Info + Links Grid */}
         <div className="footer-main">
           {/* Brand Column */}
@@ -65,7 +62,7 @@ export default function Footer() {
             <motion.div className="footer-col" variants={itemVariants}>
               <h4>Socials</h4>
               <ul>
-                <li><a href="https://www.instagram.com/roboclubnlu" target="_blank" rel="noreferrer">Instagram</a></li>
+                <li><a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a></li>
                 <li><a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></li>
                 <li><a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a></li>
               </ul>

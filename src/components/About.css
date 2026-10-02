@@ -1,0 +1,141 @@
+.about-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  height: auto; /* Scales context naturally if content stacks on mobile viewports */
+  background-color: #0a0607;
+  padding: 140px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 51, 75, 0.05);
+  z-index: 2;
+}
+
+.about-container {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* 1. Masked Typography Header System */
+.about-header {
+  width: 100%;
+  max-width: 850px;
+}
+
+/* Invisible wall block that cuts off absolute elements outside boundaries */
+.mask-wrapper {
+  overflow: hidden;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.about-badge {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #ff334b;
+}
+
+.about-main-title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.about-main-title span {
+  background: linear-gradient(135deg, #ffffff 40%, #ff334b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 2. Asymmetric Content Grid Setup */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr; /* Asymmetric balance splits */
+  gap: 80px;
+  align-items: flex-start;
+}
+
+/* Narrative Side styling */
+.about-narrative {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.narrative-lead {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.narrative-body {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #a39899;
+}
+
+/* 3. Cards Layering System */
+.about-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-card {
+  padding: 36px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.3s ease;
+}
+
+.about-card h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #b5a9ab;
+  margin-bottom: 16px;
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #a39899;
+}
+
+/* High Contrast Ambient Red Accent Card */
+.about-card.accent-card {
+  background: linear-gradient(135deg, rgba(255, 51, 75, 0.06) 0%, rgba(0, 0, 0, 0) 100%);
+  border-color: rgba(255, 51, 75, 0.15);
+}
+
+.about-card.accent-card h3 {
+  color: #ff334b;
+}
+
+/* Interactions on hovering over cards */
+.about-card:hover {
+  border-color: rgba(255, 51, 75, 0.3);
+}
+
+/* 4. Responsive Viewport Adaptations */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr; /* Collapses asymmetric system into linear tracking rows */
+    gap: 48px;
+  }
+  .about-container {
+    gap: 48px;
+  }
+}

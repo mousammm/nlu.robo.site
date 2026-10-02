@@ -1,23 +1,26 @@
 .footer-section {
+  position: relative;
   width: 100vw;
-  height: auto; /* Overrides the previous full viewport snap so it wraps content properly */
-  background-color: #0e0000; /* Deepest black-red background tone */
-  padding: 60px 40px 40px 40px;
+  height: auto;
+  min-height: 40vh;
+  /* Pure matching dark background canvas */
+  background-color: #0a0607; 
+  padding: 100px 40px 40px 40px;
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* Grounds footer contents to bottom */
-  border-top: 1px solid rgba(255, 51, 75, 0.08); /* Faint red horizon dividing line */
+  align-items: flex-end;
+  z-index: 1;
+  border-top: none; 
 }
 
 .footer-container {
   width: 100%;
-  max-width: 1100px; /* Constrains layout identically to the navbar pill width */
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
   gap: 60px;
 }
 
-/* 2. Top Structural Main Row */
 .footer-main {
   display: flex;
   justify-content: space-between;
@@ -26,7 +29,6 @@
   gap: 40px;
 }
 
-/* Brand Column Details */
 .footer-brand-col {
   max-width: 360px;
 }
@@ -40,16 +42,15 @@
 }
 
 .footer-logo span {
-  color: #ff334b; /* Cherry red brand signature accent */
+  color: #ff334b;
 }
 
 .footer-desc {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #a39899; /* Smooth gray-crimson blend text styling */
+  color: #a39899;
 }
 
-/* Grid System for the Lists */
 .footer-links-grid {
   display: flex;
   gap: 80px;
@@ -81,11 +82,10 @@
 }
 
 .footer-col a:hover {
-  color: #ff334b; /* Fades items to active crimson color elements on hover state actions */
-  transform: translateX(3px); /* Subtle premium shift click responsive animation animation trigger indicator */
+  color: #ff334b;
+  transform: translateX(3px);
 }
 
-/* 3. Bottom Row Details (Separated by Divider line) */
 .footer-bottom {
   display: flex;
   justify-content: space-between;
@@ -93,12 +93,12 @@
   flex-wrap: wrap;
   gap: 20px;
   padding-top: 32px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05); /* Thin micro separator grid rule line */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .footer-bottom p {
   font-size: 0.85rem;
-  color: #706667; /* Subdued dark gray typography */
+  color: #706667;
 }
 
 .footer-legal {
@@ -117,7 +117,6 @@
   color: #ffffff;
 }
 
-/* 4. Responsive Breakdown Adjustment styling for smaller tablet screen width states */
 @media (max-width: 768px) {
   .footer-main {
     flex-direction: column;

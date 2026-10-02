@@ -1,0 +1,207 @@
+.contact-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  background-color: #0a0607;
+  padding: 140px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255, 51, 75, 0.05);
+  z-index: 2;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 1100px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr; /* Split view */
+  gap: 80px;
+  align-items: center;
+}
+
+/* 1. Left Information Layout Panel */
+.contact-info-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #ff334b;
+  margin-bottom: 16px;
+}
+
+.contact-title {
+  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+.contact-title span {
+  background: linear-gradient(135deg, #ffffff 40%, #ff334b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #a39899;
+  margin-bottom: 48px;
+  max-width: 480px;
+}
+
+.contact-details-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.detail-item h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #706667;
+  margin-bottom: 8px;
+}
+
+.detail-item p,
+.detail-item a {
+  font-size: 1.1rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.detail-item a:hover {
+  color: #ff334b;
+}
+
+/* 2. Right Interactive Form Panel */
+.contact-form-panel {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 48px;
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.form-row {
+  display: flex;
+  gap: 24px;
+}
+
+/* Modern Minimalist Floating Label Input Fields */
+.input-group {
+  position: relative;
+  flex: 1;
+}
+
+.input-group.full-width {
+  width: 100%;
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+  resize: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-group label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  color: #a39899;
+  font-size: 1rem;
+  pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
+}
+
+/* Tracking active elements to lift labels upwards dynamically */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+  transform: translateY(-24px) scale(0.85);
+  transform-origin: left top;
+  color: #ff334b;
+}
+
+/* Animated accent bottom border lines */
+.input-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #ff334b;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-group input:focus ~ .input-bar,
+.input-group textarea:focus ~ .input-bar {
+  width: 100%;
+}
+
+/* 3. Action Submit Button Styling */
+.form-submit-btn {
+  align-self: flex-start;
+  padding: 14px 32px;
+  background-color: #ff334b;
+  color: #ffffff;
+  border: none;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(255, 51, 75, 0.25);
+  transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-submit-btn:hover {
+  background-color: #ff4d62;
+  box-shadow: 0 6px 20px rgba(255, 51, 75, 0.45);
+  transform: translateY(-2px);
+}
+
+.form-submit-btn:active {
+  transform: translateY(0px);
+}
+
+/* 4. Responsive Adaptations */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr; /* Layout collapses smoothly to rows */
+    gap: 56px;
+  }
+  .contact-form-panel {
+    padding: 32px;
+  }
+  .form-row {
+    flex-direction: column;
+    gap: 36px;
+  }
+}
