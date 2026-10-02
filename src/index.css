@@ -11,6 +11,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/***/
+/* change the selection text color */
+::selection { /* modern browsers */
+  background-color: rgba(255, 51, 75, 0.3); /* Translucent cherry red background */
+  color: #ffffff; /* Clean white text color when selected */
+}
+::-moz-selection { /* Mozilla Firefox */
+  background-color: rgba(255, 51, 75, 0.3);
+  color: #ffffff;
+}
+/***/
+
 /* font stuff start */
 /* Typography styling for that modern Dribbble feel */
 h1, h2, h3, h4 {
