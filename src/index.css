@@ -54,7 +54,8 @@ html, body, #root, .app-container {
 }
 
 /* Force each section/footer to be a full-screen block */
-section, footer {
+/* section, footer { */
+section {
   width: 100vw;
   height: 100vh;
   
