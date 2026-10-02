@@ -1,7 +1,6 @@
 .footer-section {
   width: 100vw;
   height: auto; /* Overrides the previous full viewport snap so it wraps content properly */
-  min-height: 45vh; /* Takes half screen layout instead of forcing text stretching */
   background-color: #0e0000; /* Deepest black-red background tone */
   padding: 60px 40px 40px 40px;
   display: flex;
