@@ -36,11 +36,6 @@ export default function About() {
 
   return (
     <section id="about" className="about-section">
-      {/* Fluid Moving Gradient Backgrounds */}
-      <div className="about-bg-glows">
-        <div className="glow-sphere glow-1"></div>
-        <div className="glow-sphere glow-2"></div>
-      </div>
 
       <motion.div
         className="about-container"

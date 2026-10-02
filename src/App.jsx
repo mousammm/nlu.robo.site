@@ -1,4 +1,5 @@
 import Cursor from './components/Cursor';
+import Gradient from './components/Gradient';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -9,6 +10,8 @@ export default function App() {
   return (
     <>
       <Cursor />
+      <Gradient />
+      
       <Navbar />
       <Hero />
       

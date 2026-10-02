@@ -29,11 +29,6 @@ export default function Footer() {
 
   return (
     <footer className="footer-section">
-      {/* Fluid Moving Gradient Backgrounds */}
-      <div className="footer-bg-glows">
-        <div className="glow-sphere glow-1"></div>
-        <div className="glow-sphere glow-2"></div>
-      </div>
 
       <motion.div 
         className="footer-container"

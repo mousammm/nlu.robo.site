@@ -31,11 +31,6 @@ export default function Hero() {
 
   return (
     <section id="home" className="hero-section">
-      {/* Fluid Moving Gradient Backgrounds */}
-      <div className="hero-bg-glows">
-        <div className="glow-sphere glow-1"></div>
-        <div className="glow-sphere glow-2"></div>
-      </div>
 
       <motion.div 
         className="hero-container"

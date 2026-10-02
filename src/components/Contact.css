@@ -3,7 +3,7 @@
   width: 100vw;
   min-height: 100vh;
   height: auto;
-  background-color: #0a0607;
+  background-color: transparent;
   padding: 140px 40px;
   display: flex;
   justify-content: center;
@@ -13,62 +13,7 @@
   z-index: 2;
 }
 
-/* ==========================================
-   FLUID MOVING GRADIENT BACKGROUNDS
-   ========================================== */
-.contact-bg-glows {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.contact-bg-glows .glow-sphere {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(140px);
-  opacity: 0.4;
-  mix-blend-mode: screen;
-}
-
-/* Sphere 1: Rich Cherry Red */
-.contact-bg-glows .glow-1 {
-  top: -10%;
-  right: -10%;
-  width: 45vw;
-  height: 45vw;
-  background: radial-gradient(circle, rgba(255, 51, 75, 0.55) 0%, rgba(255, 51, 75, 0) 70%);
-  animation: contactFluidOne 24s infinite alternate ease-in-out;
-}
-
-/* Sphere 2: Deep Crimson Maroon */
-.contact-bg-glows .glow-2 {
-  bottom: -15%;
-  left: -10%;
-  width: 50vw;
-  height: 50vw;
-  background: radial-gradient(circle, rgba(162, 23, 42, 0.65) 0%, rgba(162, 23, 42, 0) 70%);
-  animation: contactFluidTwo 28s infinite alternate ease-in-out;
-}
-
-@keyframes contactFluidOne {
-  0%   { transform: translate(0px, 0px) scale(1); }
-  50%  { transform: translate(-50px, 40px) scale(1.12); }
-  100% { transform: translate(30px, -25px) scale(0.92); }
-}
-
-@keyframes contactFluidTwo {
-  0%   { transform: translate(0px, 0px) scale(1); }
-  50%  { transform: translate(45px, -50px) scale(0.9); }
-  100% { transform: translate(-35px, 25px) scale(1.1); }
-}
-
-/* ==========================================
-   MAIN CONTAINER
-   ========================================== */
+/* MAIN CONTAINER */
 .contact-container {
   width: 100%;
   max-width: 1100px;
@@ -78,7 +23,7 @@
   align-items: center;
 }
 
-/* 1. Left Information Layout Panel */
+/* Left Information Layout Panel */
 .contact-info-panel {
   display: flex;
   flex-direction: column;
@@ -134,7 +79,7 @@
   color: #ff334b;
 }
 
-/* 2. Right Interactive Form Panel */
+/* Right Interactive Form Panel */
 .contact-form-panel {
   background: rgba(255, 255, 255, 0.01);
   border: 1px solid rgba(255, 255, 255, 0.04);
@@ -213,7 +158,7 @@ form {
   width: 100%;
 }
 
-/* 3. Submit Button */
+/* Submit Button */
 .form-submit-btn {
   align-self: flex-start;
   padding: 14px 32px;
@@ -238,7 +183,7 @@ form {
   transform: translateY(0px);
 }
 
-/* 4. Responsive Adaptations */
+/* Responsive Adaptations */
 @media (max-width: 900px) {
   .contact-container {
     grid-template-columns: 1fr;
@@ -253,9 +198,7 @@ form {
   }
 }
 
-/* ==========================================
-   CONTACT GMAPS EMBED CONTAINER
-   ========================================== */
+/* CONTACT GMAPS EMBED CONTAINER */
 .contact-map-wrapper {
   margin-top: 40px;
   width: 100%;
@@ -283,9 +226,7 @@ form {
   opacity: 1;
 }
 
-/* ==========================================
-   CONTACT FORM FUNCTIONAL RESPONSES
-   ========================================== */
+/* CONTACT FORM FUNCTIONAL RESPONSES */
 .form-success-message {
   display: flex;
   flex-direction: column;
@@ -321,9 +262,7 @@ textarea:disabled {
   cursor: not-allowed;
 }
 
-/* ==========================================
-   MOBILE ADJUSTMENTS
-   ========================================== */
+/* MOBILE ADJUSTMENTS */
 @media (max-width: 480px) {
   .contact-section {
     padding: 100px 20px;

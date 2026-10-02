@@ -1,9 +1,9 @@
-/* 1. Main Section Container */
+/* Main Section Container */
 .about-section {
   position: relative;
   width: 100vw;
   min-height: 100vh;
-  background-color: #0a0607;
+  background-color: transparent;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -13,56 +13,7 @@
   z-index: 2;
 }
 
-/* 2. Fluid Moving Gradient Backgrounds */
-.about-bg-glows {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-.about-bg-glows .glow-sphere {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(140px);
-  opacity: 0.4;
-  mix-blend-mode: screen;
-}
-
-.about-bg-glows .glow-1 {
-  top: 10%;
-  left: -10%;
-  width: 45vw;
-  height: 45vw;
-  background: radial-gradient(circle, rgba(255, 51, 75, 0.55) 0%, rgba(255, 51, 75, 0) 70%);
-  animation: aboutFluidOne 22s infinite alternate ease-in-out;
-}
-
-.about-bg-glows .glow-2 {
-  bottom: -15%;
-  right: -10%;
-  width: 50vw;
-  height: 50vw;
-  background: radial-gradient(circle, rgba(162, 23, 42, 0.65) 0%, rgba(162, 23, 42, 0) 70%);
-  animation: aboutFluidTwo 26s infinite alternate ease-in-out;
-}
-
-@keyframes aboutFluidOne {
-  0%   { transform: translate(0px, 0px) scale(1); }
-  50%  { transform: translate(50px, 40px) scale(1.12); }
-  100% { transform: translate(-30px, -25px) scale(0.92); }
-}
-
-@keyframes aboutFluidTwo {
-  0%   { transform: translate(0px, 0px) scale(1); }
-  50%  { transform: translate(-40px, -50px) scale(0.9); }
-  100% { transform: translate(35px, 25px) scale(1.1); }
-}
-
-/* 3. Central Content Structure */
+/* Central Content Structure */
 .about-container {
   width: 100%;
   max-width: 900px;
@@ -138,7 +89,7 @@
   color: #b5a9ab;
 }
 
-/* 4. Stats Grid */
+/* Stats Grid */
 .about-stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -186,9 +137,7 @@
   color: #b5a9ab;
 }
 
-/* ==========================================
-   5. CTA BUTTONS — GALLERY & PROJECTS
-   ========================================== */
+/* CTA BUTTONS — GALLERY & PROJECTS */
 .about-actions {
   display: flex;
   align-items: center;
@@ -254,9 +203,7 @@
   transform: translateY(0px);
 }
 
-/* ==========================================
-   6. Responsive Adaptations
-   ========================================== */
+/* Responsive Adaptations */
 @media (max-width: 900px) {
   .about-stats-grid {
     grid-template-columns: repeat(2, 1fr);

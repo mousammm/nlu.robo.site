@@ -1,0 +1,85 @@
+.global-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0a0607;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Subtle grain to hide banding on dark gradients */
+.global-bg__noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+
+.glow-sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.42;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.glow-1 {
+  top: -15%;
+  left: 10%;
+  width: 55vw;
+  height: 55vw;
+  background: radial-gradient(circle, rgba(255, 51, 75, 0.6) 0%, rgba(255, 51, 75, 0) 70%);
+  animation: drift1 22s infinite alternate ease-in-out;
+}
+
+.glow-2 {
+  bottom: -20%;
+  right: 5%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(162, 23, 42, 0.65) 0%, rgba(162, 23, 42, 0) 70%);
+  animation: drift2 28s infinite alternate ease-in-out;
+}
+
+.glow-3 {
+  top: 30%;
+  right: -10%;
+  width: 38vw;
+  height: 38vw;
+  background: radial-gradient(circle, rgba(255, 90, 110, 0.35) 0%, rgba(255, 90, 110, 0) 70%);
+  animation: drift3 32s infinite alternate ease-in-out;
+}
+
+.glow-4 {
+  bottom: 10%;
+  left: -10%;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(120, 10, 30, 0.55) 0%, rgba(120, 10, 30, 0) 70%);
+  animation: drift4 26s infinite alternate ease-in-out;
+}
+
+@keyframes drift1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(80px, 60px) scale(1.15); }
+  100% { transform: translate(-40px, -30px) scale(0.9); }
+}
+@keyframes drift2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-70px, -50px) scale(0.92); }
+  100% { transform: translate(50px, 40px) scale(1.1); }
+}
+@keyframes drift3 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(-50px, 40px) scale(1.12); }
+  100% { transform: translate(40px, -30px) scale(0.95); }
+}
+@keyframes drift4 {
+  0%   { transform: translate(0, 0) scale(1); }
+  50%  { transform: translate(60px, -40px) scale(0.94); }
+  100% { transform: translate(-30px, 30px) scale(1.08); }
+}

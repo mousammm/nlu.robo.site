@@ -1,13 +1,9 @@
-/* ==========================================
-   PREMIUM SAAS FLUID HERO SECTION
-   ========================================== */
-
-/* 1. Main Section Container */
+/* Main Section Container */
 .hero-section {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-color: #0a0607; /* Ultra dark velvet-black canvas */
+  background-color: transparent;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -15,60 +11,7 @@
   z-index: 1;
 }
 
-/* 2. Fluid Moving Gradient Backgrounds */
-.hero-bg-glows {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none; /* Allows clicks to pass through to elements beneath */
-}
-
-/* Base style for the fluid glowing spheres */
-.glow-sphere {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(140px); /* Deep blend blur effect */
-  opacity: 0.45;
-  mix-blend-mode: screen; /* Fuses colors softly against dark canvas */
-}
-
-/* Sphere 1: Rich Cherry Red */
-.glow-1 {
-  top: -10%;
-  left: 20%;
-  width: 50vw;
-  height: 50vw;
-  background: radial-gradient(circle, rgba(255, 51, 75, 0.6) 0%, rgba(255, 51, 75, 0) 70%);
-  animation: fluidMovementOne 20s infinite alternate ease-in-out;
-}
-
-/* Sphere 2: Deep Crimson Maroon */
-.glow-2 {
-  bottom: -10%;
-  right: 15%;
-  width: 45vw;
-  height: 45vw;
-  background: radial-gradient(circle, rgba(162, 23, 42, 0.7) 0%, rgba(162, 23, 42, 0) 70%);
-  animation: fluidMovementTwo 25s infinite alternate ease-in-out;
-}
-
-/* Smooth organic movements for background fluid glow */
-@keyframes fluidMovementOne {
-  0% { transform: translate(0px, 0px) scale(1); }
-  50% { transform: translate(60px, 40px) scale(1.15); }
-  100% { transform: translate(-30px, -20px) scale(0.9); }
-}
-
-@keyframes fluidMovementTwo {
-  0% { transform: translate(0px, 0px) scale(1); }
-  50% { transform: translate(-50px, -60px) scale(0.9); }
-  100% { transform: translate(40px, 30px) scale(1.1); }
-}
-
-/* 3. Central Content Structure */
+/* Central Content Structure */
 .hero-container {
   width: 100%;
   max-width: 900px;
@@ -118,7 +61,7 @@
   margin-bottom: 40px;
 }
 
-/* 4. Action Interactive Buttons Layout */
+/* Action Interactive Buttons Layout */
 .hero-actions {
   display: flex;
   align-items: center;

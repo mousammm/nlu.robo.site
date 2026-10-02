@@ -58,11 +58,6 @@ export default function Contact() {
 
   return (
     <section id="contact" className="contact-section">
-      {/* Fluid Moving Gradient Backgrounds */}
-      <div className="contact-bg-glows">
-        <div className="glow-sphere glow-1"></div>
-        <div className="glow-sphere glow-2"></div>
-      </div>
 
       <motion.div 
         className="contact-container"
