@@ -1,0 +1,29 @@
+/* ==========================================
+   LIQUID JELLY CURSOR INTERFACE
+   ========================================== */
+
+/* 1. Global Rule: Removes standard operating system cursor on desktops */
+@media (min-width: 769px) {
+  html, body, a, button, input, textarea {
+    cursor: none !important;
+  }
+}
+
+/* 2. Cursor Core Shape Elements */
+.custom-jelly-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  pointer-events: none; /* Crucial: clicks drop through cursor straight onto elements */
+  z-index: 99999;       /* Mounts object over the top navbar layer */
+  border: 1px solid rgba(255, 51, 75, 0.5);
+  mix-blend-mode: screen; /* Blends aura beautifully against elements */
+}
+
+/* 3. Hide on mobile viewports since fingers don't need hover triggers */
+@media (max-width: 768px) {
+  .custom-jelly-cursor {
+    display: none !important;
+  }
+}
