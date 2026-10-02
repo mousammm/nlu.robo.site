@@ -47,11 +47,6 @@ export default function About() {
         {/* HEADER BLOCK: Massive Awwwards-style Masked Typography */}
         <div className="about-header">
           <div className="mask-wrapper">
-            <motion.span className="about-badge" variants={titleLineVariants}>
-              // WHO WE ARE
-            </motion.span>
-          </div>
-          <div className="mask-wrapper">
             <motion.h2 className="about-main-title" variants={titleLineVariants}>
               Pioneering the Next Era of <span>Autonomous Intelligence</span>.
             </motion.h2>
